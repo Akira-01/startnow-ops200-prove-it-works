@@ -30,9 +30,29 @@ describe('End to End Tests', () => {
     done();
   });
 
+  it('should have an input element with the name of "principal"', () =>
+  pageObject
+    .evaluate(() => document.querySelector('input[name=principal]'))
+    .then(input => expect(input).to.exist)
+);
+  it('should have an input element with the name of "interestRate"', () =>
+  pageObject
+  .evaluate(() => document.querySelector('input[name=interestRate]'))
+  .then(input => expect(input).to.exist)
+);
+  it('should have an input element with the name of "loanTerm"', () =>
+  pageObject
+  .evaluate(() => document.querySelector('input[name=loanTerm]'))
+  .then(input => expect(input).to.exist)
+);
+  it('should contain a button with the name of "submit"', () =>
+  pageObject
+  .evaluate(() => document.querySelector('button[name=submit]'))
+  .then(input => expect(input).to.exist)
+);
   it('should contain a <h1> element for the page title', () => pageObject
       .evaluate(() => document.querySelector('h1').innerText)
-      .then(headerText => {
+      .then((headerText) => {
         expect(headerText).to.not.be.null;
         expect(headerText).to.equal('Mortgage Calculator');
       }));

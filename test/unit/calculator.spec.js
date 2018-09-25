@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const Calculator = require('../../src/js/lib/Calculator');
+const Nightmare = require('nightmare');
 
 describe('Calculator', () => {
   let calculator = null;
@@ -12,7 +13,31 @@ describe('Calculator', () => {
     expect(calculator.add).to.exist;
   });
 
+  it('should have an subtract function', () => {
+    expect(calculator.subtract).to.exist;
+  });
+
+  it('should have an multiply function', () => {
+    expect(calculator.multiply).to.exist;
+  });
+
+  it('should have an divide function', () => {
+    expect(calculator.divide).to.exist;
+  });
+
   it('should add 2 + 2 together correctly', () => {
     expect(calculator.add(2, 2)).to.equal(4);
+  });
+
+  it('should subtract 4 - 2 together correctly', () => {
+    expect(calculator.subtract(4, 2)).to.equal(2);
+  });
+
+  it('should multiply 2 * 2 together correctly', () => {
+    expect(calculator.multiply(2, 2)).to.equal(4);
+  });
+
+  it('should divide 4 / 2 together correctly', () => {
+    expect(calculator.divide(4, 2)).to.equal(2);
   });
 });
